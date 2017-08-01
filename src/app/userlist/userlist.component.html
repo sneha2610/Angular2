@@ -1,0 +1,42 @@
+<p-panel header="USER LIST" [toggleable]="true" [collapsed]="true">
+  <p-accordion *ngFor="let p of usernames">
+    <p-accordionTab header={{p.name}}>
+      <table class="table table-striped">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><h3>{{p.name}}</h3></td>
+          </tr>
+          <tr>
+            <th>Username:</th>
+            <td>{{p.username}}</td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td>{{p.email}}</td>
+          </tr>
+          <tr>
+            <th>Address:</th>
+            <td> {{p.address.street}}, {{p.address.suite}}, {{p.address.city}}, {{p.address.zipcode}}</td>
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <td> {{p.phone}}</td>
+          </tr>
+          <tr>
+            <th>Website:</th>
+            <td> {{p.website}}</td>
+          </tr>
+          <tr>
+            <th>Company:</th>
+            <td> <tr>{{p.company.name}}</tr>
+                 <tr>{{p.company.catchPhrase}} </tr>
+                 <tr>{{p.company.bs}}</tr>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p-accordionTab>
+  </p-accordion>
+</p-panel>

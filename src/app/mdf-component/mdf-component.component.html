@@ -1,0 +1,49 @@
+<div class="well col-md-6">
+  <h2>Model Driven Form</h2>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+<div class="form-group">
+  <label for="name">Enter your name:</label>
+  <input type="text" id="name"
+   formControlName="name"
+   class="form-control"
+   #refName
+   />
+
+   <div *ngIf="myForm.controls['name'].hasError('required')" class="alert alert-danger">
+     Please Enter Your Name
+   </div>
+  
+</div>
+
+
+<div class="form-group">
+  <label for="company">Company:</label>
+  <input type="text" id="company"
+   formControlName="company"
+   class="form-control"
+   />
+ </div>
+ <div formGroupName="address">
+   <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" formControlName="city" class="form-control">
+   </div>
+
+  <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" formControlName="state" class="form-control">
+  </div>
+
+  <div class="form-group">
+        <label for="postal">PostalCode:</label>
+        <input type="text" id="postal" formControlName="postalCode" class="form-control">
+  </div>
+
+  <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="mycountry" formControlName="country" class="form-control">
+  </div>
+ </div>
+ <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

@@ -1,0 +1,50 @@
+
+
+<div>
+  <app-carousel></app-carousel>
+</div>
+
+<p-multiSelect [options]="cars" [(ngModel)]="selectedCars"></p-multiSelect>
+
+<p>Selected Cars: {{selectedCars}}</p>
+
+
+<div class="container gap">
+    <p-dataTable [value]="testData" [paginator]="true" [rows]="10" [editable]="true">
+      <p-column field="id" header="id" [sortable]="true"></p-column>
+      <p-column header="name" field="name" [sortable]="true"  [editable]="true"></p-column>
+      <p-column header="company" field="company" [sortable]="true"></p-column>
+      <p-column header="place" field="place" [sortable]="true"></p-column>
+    </p-dataTable>
+</div>
+
+
+<div class="container gap">
+<div class="well">
+  <p>{{serviceData}}</p>
+</div>
+</div>
+
+
+
+<div class="container">
+  <p-fileUpload name="file" multiple="multiple" url="http://localhost/upload/upload.php" (onUpload)="onUpload($event)" ></p-fileUpload>
+</div>
+
+<div class="container gap">
+  <app-userlist></app-userlist>
+</div>
+
+<div class="container gap">
+  <app-construction></app-construction>
+</div>
+
+
+<div class="container gap">
+<div class="panel panel-primary padding">
+  <div class="panel-heading">DATA TABLE</div>
+  <div class="panel-body">
+    <app-component1></app-component1>
+  </div>
+</div>
+</div>
